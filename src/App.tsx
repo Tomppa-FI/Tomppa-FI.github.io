@@ -20,7 +20,7 @@ export interface ThemedComponent {
 
 
 export default function App() {
-  const [colorTheme, setColorTheme] = useState(ColorThemes.DARK);
+  const [colorTheme, setColorTheme] = useState(ColorThemes.LIGHT);
 
   return (
     <ThemeContextImpl.Provider value={{colorTheme, setColorTheme}}>

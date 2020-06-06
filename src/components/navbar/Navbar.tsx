@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { useThemeContext, ThemedComponent, ColorThemes } from "../../App";
+import Slider from "./Slider";
 
 const Wrapper = styled.div<ThemedComponent>`
   display: flex;
@@ -18,6 +19,7 @@ const NavTitle = styled.p<ThemedComponent>`
   font-family: 'Patua One', cursive;
   letter-spacing: 1.2px;
   padding: 0 45px;
+  white-space: nowrap;
   color: ${props => props.colorTheme === ColorThemes.DARK ? 
     ("#e2e4e9") : ("#282c34")
   };
@@ -61,6 +63,7 @@ export default function Navbar() {
           <NavImage src="./LI-In-Bug.png" alt="LinkedIn Link" />
         </NavLink>
       </LinkContainer>
+      <Slider />
     </Wrapper>
   )
 }
