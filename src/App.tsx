@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useContext } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export enum ColorThemes {
+  DARK,
+  LIGHT
 }
 
-export default App;
+interface ThemeContext {
+  colorTheme: ColorThemes,
+  setColorTheme: React.Dispatch<React.SetStateAction<ColorThemes>>
+}
+
+const ThemeContextImpl = React.createContext<ThemeContext | undefined>(undefined);
+export const useThemeContext = () => useContext(ThemeContextImpl)!;
+
+export default function App() {
+  const [colorTheme, setColorTheme] = useState(ColorThemes.LIGHT);
+
+  return (
+    <ThemeContextImpl.Provider value={{colorTheme, setColorTheme}}>
+      <div>Hello</div>
+    </ThemeContextImpl.Provider>
+  )
+}
