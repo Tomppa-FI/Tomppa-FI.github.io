@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import Header from "./components/Header";
 
 export enum ColorThemes {
   DARK,
@@ -13,12 +14,17 @@ interface ThemeContext {
 const ThemeContextImpl = React.createContext<ThemeContext | undefined>(undefined);
 export const useThemeContext = () => useContext(ThemeContextImpl)!;
 
+export interface ThemedComponent {
+  colorTheme: ColorThemes
+}
+
+
 export default function App() {
-  const [colorTheme, setColorTheme] = useState(ColorThemes.LIGHT);
+  const [colorTheme, setColorTheme] = useState(ColorThemes.DARK);
 
   return (
     <ThemeContextImpl.Provider value={{colorTheme, setColorTheme}}>
-      <div>Hello</div>
+      <Header />
     </ThemeContextImpl.Provider>
   )
 }
