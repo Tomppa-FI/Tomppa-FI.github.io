@@ -1,12 +1,18 @@
 import React from "react";
 import styled from "@emotion/styled/macro";
 import { useThemeContext, ColorThemes, ThemedComponent } from "../../App";
+import { MediaQueryMap } from "../../MediaQueries";
 
 const SliderContainer = styled.div`
   height: auto;
   width: auto;
+  margin-left: auto;
   padding: 0 15px;
+  ${MediaQueryMap.small} {
+    margin: 0;
+  }
 `;
+
 const SliderLabel = styled.label`
   display: block;
   width: 60px;
@@ -14,7 +20,7 @@ const SliderLabel = styled.label`
   position: relative;
   background: gray;
   border-radius: 25px;
-  transition: background-color 0.2s linear;
+  transition: background-color 0.3s linear;
   &:after {
     transition: transform 0.2s linear;
     position: absolute;

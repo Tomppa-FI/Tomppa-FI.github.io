@@ -2,27 +2,44 @@ import React from "react";
 import styled from "@emotion/styled";
 import { useThemeContext, ThemedComponent, ColorThemes } from "../../App";
 import Slider from "./Slider";
+import { MediaQueryMap } from "../../MediaQueries";
 
 const Wrapper = styled.div<ThemedComponent>`
   display: flex;
   align-items: center;
   min-height: 50px;
   height: 7vh;
+  font-size: 1.8rem;
   width: 100%;
   background-color: ${props => props.colorTheme === ColorThemes.DARK ? 
-    ("#282c34") : ("#e2e4e9")
+    ("#282c34") : ("#d3d6de")
   };
+  ${MediaQueryMap.small} {
+    font-size: 1.6rem;
+  }
+  ${MediaQueryMap.medium} {
+    font-size: 1.4rem;
+  }
+  ${MediaQueryMap.standard} {
+    font-size: 1.2rem;
+  }
 `;
 
 const NavTitle = styled.p<ThemedComponent>`
-  font-size: 1.3em;  
+  font-size: 1em;  
   font-family: 'Patua One', cursive;
   letter-spacing: 1.2px;
-  padding: 0 45px;
+  padding: 0 4vw;
   white-space: nowrap;
   color: ${props => props.colorTheme === ColorThemes.DARK ? 
     ("#e2e4e9") : ("#282c34")
   };
+  ${MediaQueryMap.small} {
+    font-size: 1.1em;
+  }
+  ${MediaQueryMap.standard} {
+    font-size: 1.3em;
+  }
 `;
 
 const NavLink = styled.a`
@@ -38,11 +55,14 @@ const NavImage = styled.img`
 `;
 
 const LinkContainer = styled.div`
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  height: 100%;
-  padding: 0 20px;
+  display: none;
+  ${MediaQueryMap.small} {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding: 0 20px;
+    height: 100%;
+  }
 `;
 
 export default function Navbar() {
