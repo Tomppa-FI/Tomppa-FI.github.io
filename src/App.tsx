@@ -1,5 +1,7 @@
 import React, { useState, useContext } from "react";
 import Header from "./components/Header";
+import AboutMe from "./components/sections/AboutMe";
+import Projects from "./components/sections/Projects";
 
 export enum ColorThemes {
   DARK,
@@ -20,11 +22,13 @@ export interface ThemedComponent {
 
 
 export default function App() {
-  const [colorTheme, setColorTheme] = useState(ColorThemes.LIGHT);
+  const [colorTheme, setColorTheme] = useState(ColorThemes.DARK);
 
   return (
     <ThemeContextImpl.Provider value={{colorTheme, setColorTheme}}>
       <Header />
+      <AboutMe />
+      <Projects />
     </ThemeContextImpl.Provider>
   )
 }

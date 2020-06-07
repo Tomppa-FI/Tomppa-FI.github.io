@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled/macro";
-import { useThemeContext, ColorThemes, ThemedComponent } from "../../App";
+import { useThemeContext, ColorThemes } from "../../App";
 import { MediaQueryMap } from "../../MediaQueries";
 
 const SliderContainer = styled.div`
@@ -45,7 +45,7 @@ const SliderInput = styled.input`
 `;
 
 export default function Slider() {
-  const {colorTheme, setColorTheme} = useThemeContext();
+  const { setColorTheme } = useThemeContext();
   
   const handleChange = () => {
     setColorTheme((prevTheme) => (
@@ -55,7 +55,7 @@ export default function Slider() {
 
   return (
     <SliderContainer>
-      <SliderInput type="checkbox" id="SliderInput" onChange={handleChange} />
+      <SliderInput type="checkbox" id="SliderInput" onChange={handleChange} defaultChecked={true}/>
       <SliderLabel htmlFor="SliderInput" />
     </SliderContainer>
   )

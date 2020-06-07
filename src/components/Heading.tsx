@@ -49,7 +49,7 @@ const Title = styled.h1<ThemedComponent>`
     ${TypeIn} 2s steps(50, end),
     ${Blinker} 1.2s step-end infinite;
   color: ${props => props.colorTheme === ColorThemes.DARK ? 
-    ("#17252A") : ("#FEFFFF") 
+    ("#282c34") : ("#e2e4e9") 
   };
   ${MediaQueryMap.medium} {
     font-size: 2.1em;
@@ -66,7 +66,7 @@ const Paragraph = styled.p<ThemedComponent>`
   font-weight: 700;
   letter-spacing: 1.2px;
   color: ${props => props.colorTheme === ColorThemes.DARK ? 
-    ("#17252A") : ("#FEFFFF") 
+    ("#282c34") : ("#e2e4e9") 
   };
   ${MediaQueryMap.small} {
     font-size: .9em;
@@ -91,7 +91,7 @@ export default function Heading() {
           <Title colorTheme={colorTheme}>Thomas Whiting</Title>
         </TitleContainer>
         <Paragraph colorTheme={colorTheme}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          My name is Thomas Whiting, and I am a self-taught aspiring developer. I moved to Finland in October 2019 after falling in love with the country and it's culture, and now that I'm here, I hope to enhance the lives of people through the use of technology.
         </Paragraph>
       </TextContainer>
     </Wrapper>

@@ -66,7 +66,7 @@ const LinkContainer = styled.div`
 `;
 
 export default function Navbar() {
-  const {colorTheme, setColorTheme} = useThemeContext();
+  const {colorTheme} = useThemeContext();
   return (
     <Wrapper colorTheme={colorTheme}>
       <NavTitle colorTheme={colorTheme}>Thomas Whiting</NavTitle>
